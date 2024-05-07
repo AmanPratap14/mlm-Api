@@ -1,0 +1,93 @@
+POSTMAN Test Cases
+
+1. Create User
+Request: POST http://localhost:3000/api/users
+Request Body:
+json
+{
+    "name": "John",
+    "parent": 1
+}
+
+Expected Response:
+Status: 201 Created
+
+2. Retrieve User List
+
+Request: GET http://localhost:3000/api/users
+Expected Response:
+json
+
+[
+    {
+        "id": 1,
+        "name": "Aman",
+        "parent": 1
+    },
+    {
+        "id": 2,
+        "name": "John",
+        "parent": 1
+    }
+]
+3. Distribute Earnings
+Request: POST http://localhost:3000/api/distribute
+Request Body:
+json
+
+{
+    "amount": 2000
+}
+Expected Response:
+json
+{
+    "description": "Earnings distribution",
+    "amount": 2000,
+    "breakdown": [
+        {
+            "level": "lv8",
+            "percentage": 40,
+            "amount": 800
+        },
+        {
+            "level": "lv7",
+            "percentage": 20,
+            "amount": 400
+        },
+        {
+            "level": "lv6",
+            "percentage": 10,
+            "amount": 200
+        },
+        {
+            "level": "lv5",
+            "percentage": 5,
+            "amount": 100
+        },
+        {
+            "level": "lv4",
+            "percentage": 1,
+            "amount": 80
+        },
+        {
+            "level": "lv3",
+            "percentage": 1,
+            "amount": 80
+        },
+        {
+            "level": "lv2",
+            "percentage": 1,
+            "amount": 80
+        },
+        {
+            "level": "lv1",
+            "percentage": 1,
+            "amount": 80
+        },
+        {
+            "level": "lv0",
+            "percentage": 1,
+            "amount": 80
+        }
+    ]
+}
